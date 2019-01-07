@@ -1,8 +1,8 @@
 {
   "name": "git-sd",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple Dashboard for git repositories",
-  "bin": "node bin/git-sd",
+  "bin": "bin/git-sd",
   "scripts": {
     "build": "coffee --bare --compile --output bin/ src/",
     "prepublish": "coffee --bare --compile --output bin/ src/"
