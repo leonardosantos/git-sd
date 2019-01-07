@@ -1,1 +1,3 @@
-git-repo-dashboard
+# git-sd
+## Git Simple Dashboard
+
