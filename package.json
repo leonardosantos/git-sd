@@ -1,0 +1,33 @@
+{
+  "name": "git-sd",
+  "version": "0.0.2",
+  "description": "Simple Dashboard for git repositories",
+  "bin": "node bin/run.js",
+  "scripts": {
+    "build": "coffee --bare --compile --output bin/ src/",
+    "prepublish": "coffee --bare --compile --output bin/ src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonardosantos/git-sd.git"
+  },
+  "author": "Leonardo Santos",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/leonardosantos/git-sd/issues"
+  },
+  "dependencies": {
+    "angular": "1.7.5",
+    "bootstrap": "4.2.1",
+    "express": "4.16.4",
+    "jquery": "1.9.1",
+    "lodash": "3.10.1",
+    "minimist": "1.2.0",
+    "popper.js": "1.14.6",
+    "simple-git": "1.107.0"
+  },
+  "devDependencies": {
+    "coffee-script": "1.6.3"
+  },
+  "homepage": "https://github.com/leonardosantos/git-sd"
+}
