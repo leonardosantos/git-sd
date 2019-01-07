@@ -11,8 +11,8 @@ argv.port = argv.port || 3000
 
 app = express()
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/../web/index.html')))
-app.use('/static', express.static(path.join(__dirname + '/web')))
-app.use('/node_modules', express.static(path.join(__dirname + '/node_modules')))
+app.use('/static', express.static(path.join(__dirname + '/../web')))
+app.use('/node_modules', express.static(path.join(__dirname + '/../node_modules')))
 
 app.post('/refresh', _refresh = (req, res, fn) => {
   console.log('GIT-SD getting branches...')
@@ -43,7 +43,7 @@ app.post('/refresh', _refresh = (req, res, fn) => {
         branches: remote_branches
       }
 
-      fs.writeFile(path.join(__dirname + '/web/repo.json'), JSON.stringify(result), (e) => e ? console.error(e) : console.log("GIT-SD done"))
+      fs.writeFile(path.join(__dirname + '/../web/repo.json'), JSON.stringify(result), (e) => e ? console.error(e) : console.log("GIT-SD done"))
 
       if (res) res.send(JSON.stringify(result))
       if (fn) fn()
