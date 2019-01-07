@@ -1,6 +1,6 @@
 {
   "name": "git-sd",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple Dashboard for git repositories",
   "bin": "bin/git-sd",
   "repository": {

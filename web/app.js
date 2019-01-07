@@ -3,7 +3,7 @@ angular
 .controller('IndexCtrl', ['$scope', '$http', ($scope, $http) => {
   receive = (result) => handle($scope.repo = result.data)
   $scope.refresh = () => $scope.loading = $http.post('/refresh').then(receive).then(()=>delete $scope.loading)
-  $http.get('/static/repo.json').then(receive)
+  $http.get('/repo.json').then(receive)
 
   handle = (repo) => {
     repo.envs = {}
