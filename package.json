@@ -3,10 +3,6 @@
   "version": "0.0.4",
   "description": "Simple Dashboard for git repositories",
   "bin": "bin/git-sd",
-  "scripts": {
-    "build": "coffee --bare --compile --output bin/ src/",
-    "prepublish": "coffee --bare --compile --output bin/ src/"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/leonardosantos/git-sd.git"
@@ -25,9 +21,6 @@
     "minimist": "1.2.0",
     "popper.js": "1.14.6",
     "simple-git": "1.107.0"
-  },
-  "devDependencies": {
-    "coffee-script": "1.6.3"
   },
   "homepage": "https://github.com/leonardosantos/git-sd"
 }
