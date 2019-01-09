@@ -1,13 +1,17 @@
 angular
 .module('git-sd', [])
-.controller('IndexCtrl', ['$scope', '$http', ($scope, $http) => {
+.factory('$config', ['$http', ($http) => {
+  var config = { $promise: $http.get('/config.json').then((result) => _.extend(config, result.data)) }
+  return config
+}])
+.controller('IndexCtrl', ['$scope', '$http', '$config', ($scope, $http, $config) => {
   receive = (result) => handle($scope.repo = result.data)
   $scope.refresh = () => $scope.loading = $http.post('/refresh').then(receive).then(()=>delete $scope.loading)
-  $http.get('/repo.json').then(receive)
+  $config.$promise.then(() => $http.get('/repo.json').then(receive))
 
   handle = (repo) => {
     repo.envs = {}
-    envPrefix = 'remotes/origin/envs/'
+    envPrefix = $config.envPrefix
     for (b in repo.branches) {
       branch = repo.branches[b]
       if (!branch.name.startsWith(envPrefix)) continue
@@ -15,7 +19,7 @@ angular
       repo.envs[envName] = { current: branch }
     }
 
-    deployPrefix = 'remotes/origin/deploy/'
+    deployPrefix = $config.deployPrefix
     for (b in repo.branches) {
       branch = repo.branches[b]
       if (!branch.name.startsWith(deployPrefix)) continue

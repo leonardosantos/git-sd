@@ -1,6 +1,6 @@
 {
   "name": "git-sd",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple Dashboard for git repositories",
   "bin": "bin/git-sd",
   "repository": {
@@ -16,11 +16,14 @@
     "angular": "1.7.5",
     "bootstrap": "4.2.1",
     "express": "4.16.4",
+    "font-awesome": "4.7.0",
     "jquery": "1.9.1",
     "lodash": "3.10.1",
     "minimist": "1.2.0",
+    "moment": "2.23.0",
     "popper.js": "1.14.6",
-    "simple-git": "1.107.0"
+    "simple-git": "1.107.0",
+    "q": "1.5.1"
   },
   "homepage": "https://github.com/leonardosantos/git-sd"
 }
